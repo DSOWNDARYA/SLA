@@ -1,0 +1,25 @@
+package SLA;
+
+public class Student {
+	String Clg="Muthayammal College Of Enginering";
+	String Name="Sowndarya D";
+	int Age=21;
+	float Height=5.6f;
+	double Weight=60.78d;
+	long Mobile=9361094087l;
+	String Address="Chennai";
+	short Roll=104;
+	String Dept="CSE";
+    public static void main(String[]args) {
+    	Student obj=new Student();
+    	System.out.println("College Name: "+obj.Clg);
+    	System.out.println("Name: "+obj.Name);
+    	System.out.println("Agge: "+obj.Age);
+    	System.out.println("Height: "+obj.Height);
+    	System.out.println("Weight: "+obj.Weight);
+    	System.out.println("Mobile: "+obj.Mobile);
+    	System.out.println("Address: "+obj.Address);
+    	System.out.println("Roll Number: "+obj.Roll);
+    	System.out.println("Department: "+obj.Dept);
+    }
+}
