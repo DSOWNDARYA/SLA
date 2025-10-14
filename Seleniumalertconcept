@@ -1,0 +1,42 @@
+package SeleniumTask;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class AlertCocept {
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new EdgeDriver();
+		driver.get("https://www.tutorialspoint.com/selenium/practice/alerts.php");
+		
+		//first alert
+		WebElement link=driver.findElement(By.cssSelector("button.btn-primary"));
+		link.click();
+		Thread.sleep(2000);
+		Alert al=driver.switchTo().alert();
+		System.out.println(al.getText());
+		al.accept();
+		
+		//second alert
+		WebElement link1=driver.findElement(By.xpath("(//button[@class='btn btn-primary'])[3]"));
+		link1.click();
+		Thread.sleep(2000);
+		Alert al1=driver.switchTo().alert();
+		System.out.println(al1.getText());
+		al1.accept();
+		
+		//Third alert
+		WebElement link2=driver.findElement(By.xpath("(//button[@class='btn btn-primary'])[4]"));
+		link2.click();
+		Thread.sleep(2000);
+		Alert al2=driver.switchTo().alert();
+		System.out.println(al2.getText());
+		al2.sendKeys("Sowndarya");
+		al2.accept();
+		driver.close();
+		
+	}
+
+}
