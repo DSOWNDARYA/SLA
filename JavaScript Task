@@ -1,0 +1,25 @@
+package SeleniumTask;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class JavaScriptcincept {
+	public static void main(String[] args) {
+		
+		WebDriver driver=new EdgeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		String url="https://www.hyrtutorials.com/p/html-dropdown-elements-practice.html";
+		driver.get(url);
+		WebElement eclipse=driver.findElement(By.xpath("(//a[text()='Eclipse'])[2]"));
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",eclipse);
+		js.executeScript("arguments[0].setAttribute('style','background:yellow; border:2px solid red;');",eclipse);
+		
+	}
+
+}
