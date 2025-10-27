@@ -1,0 +1,40 @@
+package SeleniumTask;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class Miniproject {
+	public static void main(String[] args) {
+		
+		WebDriver driver=new EdgeDriver();
+		String url="https://practicetestautomation.com/practice-test-login/";
+		driver.get(url);
+		
+		WebElement user=driver.findElement(By.id("username"));
+		user.sendKeys("student");
+		
+		WebElement password=driver.findElement(By.id("password"));
+		password.sendKeys("Password123");
+		
+		WebElement button=driver.findElement(By.id("submit"));
+		button.click();
+		
+	    WebElement success=driver.findElement(By.xpath("//h1[text()=\"Logged In Successfully\"]"));
+	    System.out.println(success.getText());
+	    
+	    WebElement log=driver.findElement(By.xpath("//a[text()=\"Log out\"]"));
+	    log.click();
+	    
+	    WebElement test=driver.findElement(By.xpath("//h2[text()=\"Test login\"]"));
+	    String text=test.getText();
+	    if(text.contains("Test login")) {
+	    	System.out.println("Logout successfully");
+	    }else {
+	    	System.out.println("Logout failed");
+	    }
+		
+	}
+
+}
